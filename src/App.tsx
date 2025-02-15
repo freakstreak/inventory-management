@@ -81,7 +81,7 @@ const InventoryApp: React.FC = () => {
               Inventory Stats
             </Typography>
           </div>
-          <div className="flex w-full gap-4 mt-4 mb-8">
+          <div className="grid lg:grid-cols-4 sm:grid-cols-2  w-full gap-4 mt-4 mb-8">
             <Stats products={products} />
           </div>
 
