@@ -10,7 +10,7 @@ const Stats = ({ products }: { products: IProduct[] }) => {
   const stats: ICard[] = [
     {
       label: "Total product",
-      value: products.length,
+      value: products.filter((p) => !p.disabled).length,
       icon: <ShoppingCartIcon fontSize="large" />,
     },
     {
