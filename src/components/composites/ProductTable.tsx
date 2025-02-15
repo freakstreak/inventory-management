@@ -41,9 +41,9 @@ const ProductTable: React.FC<ProductTableProps> = ({
         {!products.length ? (
           <EmptyProductRow />
         ) : (
-          products.map((product) => (
+          products.map((product, index) => (
             <ProductRow
-              key={product.id}
+              key={index}
               product={product}
               adminView={adminView}
               onEdit={onEdit}

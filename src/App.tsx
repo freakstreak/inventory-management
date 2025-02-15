@@ -24,7 +24,14 @@ const InventoryApp: React.FC = () => {
       const response = await axios.get(
         "https://dev-0tf0hinghgjl39z.api.raw-labs.com/inventory"
       );
-      setProducts(response.data);
+      setProducts((product) => {
+        if (response?.data?.length) {
+          return response.data.map((p: IProduct, index: number) => {
+            return { ...p, id: index };
+          });
+        }
+        return [];
+      });
     } catch (error: AxiosError | any) {
       console.log(error.response);
       setError(error?.statusText ?? error?.message);
