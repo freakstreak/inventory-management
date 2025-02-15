@@ -33,7 +33,6 @@ const InventoryApp: React.FC = () => {
         return [];
       });
     } catch (error: AxiosError | any) {
-      console.log(error.response);
       setError(error?.statusText ?? error?.message);
     }
     setLoading(false);

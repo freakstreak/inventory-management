@@ -25,7 +25,9 @@ const ProductRow: React.FC<ProductRowProps> = ({
     <TableCell>{product.category}</TableCell>
     <TableCell>{product.price}</TableCell>
     <TableCell>{product.quantity}</TableCell>
-    <TableCell>{product.value}</TableCell>
+    <TableCell>
+      {Number(product.price.replace("$", "")) * product.quantity}
+    </TableCell>
     <TableCell>
       <IconButton
         disabled={product.disabled || !adminView}
